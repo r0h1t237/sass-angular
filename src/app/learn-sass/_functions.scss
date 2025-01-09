@@ -1,0 +1,8 @@
+//  function in scss used to get calculated resuld
+@import './variables';
+
+@function weight($weight-name){
+
+    @return map-get($font-weight,$weight-name)
+    
+}

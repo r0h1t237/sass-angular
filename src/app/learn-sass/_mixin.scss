@@ -1,0 +1,30 @@
+// mixin is used to avoid repeat of code
+@import './variables';
+
+@mixin flexCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexDirection($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin theme($light-theme) {
+    @if ($light-theme) {
+        background-color: lighten($primary-color, 100%);
+        color: darken($font-color, 100%)
+    }
+
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}

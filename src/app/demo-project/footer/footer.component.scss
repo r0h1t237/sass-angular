@@ -1,0 +1,28 @@
+@import '../config';
+@import '../about-page/about-page.component.scss';
+
+.social-icons {    
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+
+    a {
+        color: set-text-color($primary-color);
+        padding: 0.4rem;
+        @include transition-ease;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+}
+
+footer{
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0.4rem;
+    right:1rem;
+    text-align: right;
+    padding:1rem;
+    color:set-text-color($primary-color);
+}

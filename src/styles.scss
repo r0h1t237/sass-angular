@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+// below code for learning sass
+
+// @import './app/learn-sass/variables';
+
+// html {
+//     scroll-behavior: smooth;
+// }
+
+// body {
+//     background-color: $primary-color;
+//     font-weight: map-get($font-weight , regular);
+// }
+
+// below code for demo project
+@import './app/demo-project/reset';
+@import './app/demo-project/config';
+
+body{
+background:$primary-color;
+color:set-text-color($primary-color);
+height:100vh;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1;
+}
+

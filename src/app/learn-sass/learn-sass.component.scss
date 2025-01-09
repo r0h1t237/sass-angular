@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+
+// // variables
+// $primary-color: oklch(63.32% 0.24 31.68);
+// $font-color: #fff;
+
+// // maps
+// $font-weight: (
+//     'regular':400,
+//     'medium':500,
+//     'bold':700,
+// );
+
+// general reset of html page
+@import './resets';
+
+
+// variables partials
+@import './variables';
+
+// functions
+@import './functions';
+
+// mixins
+@import './mixin';
+
+.m-1 {
+    margin: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+// Nesting
+// Avoid over nesting instead of that use class
+
+.container {
+    width: 100%;
+    height: auto;
+    background-color: $primary-color;
+    color: $font-color;
+}
+
+.main {
+    @include flexDirection(row);
+
+    @include mobile {
+        @include flexDirection(column);
+    }
+
+   
+}
+
+.card {
+    width: 80%;
+    margin: 0 auto;
+
+
+
+    .title {
+        text-align: center;
+        font-weight: map-get($font-weight, bold);
+        margin: 10px 0 20px;
+    }
+
+    .content {
+        // color: $font-color;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+    }
+
+    //  main-actions or &-actions
+    &-actions {
+        text-align: end;
+
+        .btn1 {
+            padding: 10px;
+            margin-left: 10px;
+            border-radius: 6px;
+            border: 1px solid gray;
+            font-weight: weight(regular);
+
+            &:hover {
+                background: rgb(70, 127, 219);
+                color: white;
+            }
+        }
+
+        .btn2{
+            @extend .btn1;
+
+            &:hover{
+                background-color: orange;
+            }
+
+        }
+
+    }
+
+    // Partial is a sass named leading with underscore(_) like _button.scss
+    // It is used to separate files based on the choice like component or functionality
+
+}
+
+.light {
+    @include theme($light-theme: false)
+}
